@@ -21,7 +21,7 @@ Once installed properly, you can activate the addon in Blender in `Edit->Prefere
 
 The interface is then accessed when in Object Mode, under Tools.
 
-![Interface](https://github.com/Fragrag/blender_lifting/doc/menu.PNG)
+![Interface](https://github.com/Fragrag/blender_lifting/blob/master/doc/menu.PNG)
 
 - **Image path:** Location of the image to estimate 3D pose from
 - **Scale:** Scale of armature
