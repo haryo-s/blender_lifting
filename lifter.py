@@ -1,13 +1,16 @@
 import json
 import sys
-sys.path.append("D:/Photography/CurrentProjects/ProgrammingProjects/blender_lifting/blender_lifting_venv/Lib/site-packages")
+import os
+
+ADDON_PATH = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(ADDON_PATH + "/blender_lifting_venv/Lib/site-packages")
 
 import lifting
 import cv2
 
-image_path = "D:/Photography/CurrentProjects/ProgrammingProjects/blender_lifting/data/images/F21AN.bmp"
-SESSION_PATH = "D:/Photography/CurrentProjects/ProgrammingProjects/blender_lifting/data/saved_sessions/init_session/init"
-PROB_MODEL_PATH = 'D:/Photography/CurrentProjects/ProgrammingProjects/blender_lifting/data/saved_sessions/prob_model/prob_model_params.mat'
+image_path = ADDON_PATH + "/data/images/Tan-suit.jpeg"
+SESSION_PATH = ADDON_PATH + "/data/saved_sessions/init_session/init"
+PROB_MODEL_PATH = ADDON_PATH + "/data/saved_sessions/prob_model/prob_model_params.mat"
 
 if len(sys.argv) == 4:
     image_path = sys.argv[1]

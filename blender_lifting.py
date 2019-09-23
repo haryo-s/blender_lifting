@@ -2,7 +2,10 @@
 import subprocess
 import sys
 import json
-sys.path.append("D:/Photography/CurrentProjects/ProgrammingProjects/blender_lifting/blender_lifting_venv/Lib/site-packages")
+import os
+
+ADDON_PATH = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(ADDON_PATH + "/blender_lifting_venv/Lib/site-packages")
 
 # Importing blender_lifting specific modules
 import numpy
@@ -11,7 +14,7 @@ import numpy
 import bpy
 from mathutils import Vector
 
-APP_PATH = "D:/Photography/CurrentProjects/ProgrammingProjects/blender_lifting/lifter.py"
+APP_PATH = ADDON_PATH + "/lifter.py"
 CONNECTIONS = [ [0, 1], [1, 2], [2, 3], [0, 4], [4, 5], [5, 6], [0, 7], [7, 8],
                 [8, 9], [9, 10], [8, 11], [11, 12], [12, 13], [8, 14], [14, 15],
                 [15, 16] ]               
@@ -36,9 +39,9 @@ LIFTING_BONE_PARENTS = {'pelvis_r': 'base',
                         'forearm_r': 'arm_r'
                         }
         
-image_path = "D:/Photography/CurrentProjects/ProgrammingProjects/blender_lifting/data/images/Tan-suit.jpeg"
-session_path = "D:/Photography/CurrentProjects/ProgrammingProjects/blender_lifting/data/saved_sessions/init_session/init"
-prob_model_path = 'D:/Photography/CurrentProjects/ProgrammingProjects/blender_lifting/data/saved_sessions/prob_model/prob_model_params.mat'
+image_path = ADDON_PATH + "/data/images/Tan-suit.jpeg"
+session_path = ADDON_PATH + "/data/saved_sessions/init_session/init"
+prob_model_path = ADDON_PATH + "/data/saved_sessions/prob_model/prob_model_params.mat"
 
 def _add_bezier(v0, v1, name, scale=1.0, dimensions='3D', bevel_depth = 5): 
     '''

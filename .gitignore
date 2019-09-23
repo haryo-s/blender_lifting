@@ -1,3 +1,4 @@
-/data
-/blender_lifting_venv
+/data/
+/blender_lifting_venv/
 .vscode/settings.json
+*__pycache__*

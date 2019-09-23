@@ -8,8 +8,8 @@ bl_info = {
     "category": "Animation"
     }
 
-from . import interface
 from . import blender_lifting
+from . import interface
 
 def register():
     interface.register()

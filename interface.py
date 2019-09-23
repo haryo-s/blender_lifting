@@ -1,3 +1,9 @@
+from . import blender_lifting
+
+#Importing Blender modules
+import bpy
+from mathutils import Vector
+
 # ------------------------------------------------------------------------
 #    Interface
 # ------------------------------------------------------------------------
@@ -45,14 +51,14 @@ class MyProperties(PropertyGroup):
     prob_model_path_field: StringProperty(
         name = "ADVANCED: Probability Model",
         description="Choose a directory:",
-        default=prob_model_path,
+        default=blender_lifting.prob_model_path,
         maxlen=1024,
         subtype='FILE_PATH'
         )
     sessions_path_field: StringProperty(
         name = "ADVANCED: Saved Sessions",
         description="Choose a directory:",
-        default=session_path,
+        default=blender_lifting.session_path,
         maxlen=1024,
         subtype='FILE_PATH'
         )
@@ -71,8 +77,8 @@ class WM_OT_CreateArmature(Operator):
 
         # print the values to the console
         print(str(mytool.image_path_field))
-        coordinates = lift_image(mytool.image_path_field)
-        create_armature(coordinates, mytool.armature_name_field)
+        coordinates = blender_lifting.lift_image(mytool.image_path_field)
+        blender_lifting.create_armature(coordinates, mytool.armature_name_field)
 
         return {'FINISHED'}
 
