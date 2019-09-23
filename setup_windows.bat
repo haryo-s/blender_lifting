@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p data/saved_sessions
-cd data/saved_sessions
+mkdir data\saved_sessions
+cd data\saved_sessions
 
 echo 'Downloading models...'
 curl -O http://visual.cs.ucl.ac.uk/pubs/liftingFromTheDeep/res/init_session.tar.gz
@@ -12,7 +12,7 @@ tar -xvzf init_session.tar.gz
 tar -xvzf prob_model.tar.gz
 rm -rf init_session.tar.gz
 rm -rf prob_model.tar.gz
-cd ../..
+cd ..\..
 
 # echo 'Checking Python version'
 # correct_version="Python 3.7."
@@ -25,7 +25,7 @@ echo 'Creating Python virtual environment'
 python -m venv blender_lifting_venv
 
 echo 'Activating virtual environment and installing dependencies'
-source blender_lifting_venv/Scripts/activate
+cd blender_lifting_venv\Scripts
 pip install tensorflow
 pip install opencv-python
 pip install scikit-image
