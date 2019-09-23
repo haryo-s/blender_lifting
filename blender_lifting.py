@@ -86,7 +86,6 @@ def lift_image(img_path):
     returned_val = json.loads(returned_bin.decode('utf-8'))
     return returned_val
 
-
 def create_curve_skeleton(coordinates, name, scale=1.0):
     """
     Iterates through input coordinates acquired from lift_image() and creates a bezier curve skeleton. For preview use mainly. 
@@ -94,7 +93,7 @@ def create_curve_skeleton(coordinates, name, scale=1.0):
 
     :param coordinates: List of vertex coordinates from lifter
     :param name: Base name of the bezier_curves 
-    :param scale: Scale of the skeleton TODO: Implement scaling
+    :param scale: Scale of the skeleton 
     """
     curve_nr = 0
     for conn in CONNECTIONS:
@@ -109,7 +108,7 @@ def create_armature(coordinates, name, scale=1.0):
 
     :param coordinates: List of vertex coordinates from lifter
     :param name: Base name of the bezier_curves 
-    :param scale: Scale of the skeleton TODO: Implement scaling
+    :param scale: Scale of the skeleton 
     """
     # Setting the scale to a hundredth already as the distances from lifting are considerably large.
     scale = scale * 0.01  
