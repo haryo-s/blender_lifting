@@ -3,7 +3,7 @@ blender_lifting 0.1.0
 
 DEPRECATION NOTICE
 ---------
-API updates to Blender and Tensorflow have also rendered this project incompatible without significant tinkering to blender_project and its main dependency Lifting-from-the-Deep.
+API updates to Blender and Tensorflow have rendered this project incompatible without significant tinkering to blender_project and its main dependency Lifting-from-the-Deep.
 
 I do not have the time anymore to actively develop and support this project, but feel free to fork this project, poke around its inner workings and make your own adjustments. Pull requests are always welcome as well!
 
